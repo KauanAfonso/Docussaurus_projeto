@@ -2,36 +2,31 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Getting Started
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's create our django´s envirounuments that will be running the backend`s part belonged to the project.
 
-## Getting Started
+## Requirements
 
-Get started by **creating a new site**.
+- Python (3.8, 3.9, 3.10, 3.11)  
+- Django (3.2, 4.0, 4.1, 4.2)  
+- Django REST Framework (3.10, 3.11, 3.12, 3.13, 3.14)  
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Starting your project at beggininng 
 
-### What you'll need
+To init any project is Essential to create the **VENV**.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+To do it , you need runnnig that command:
 
 ```bash
-npm init docusaurus@latest my-website classic
+python -m venv env
 ```
 
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
 The command also installs all necessary dependencies you need to run Docusaurus.
 
-## Start your site
+## Start your server
 
 Run the development server:
 
