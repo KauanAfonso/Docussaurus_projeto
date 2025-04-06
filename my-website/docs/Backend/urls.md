@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 ---
-
+# Urls
 ## Introduction
 
 URLs in the **Django REST Framework** define paths to API resources. They are associated with **Views**, which process requests and return appropriate responses. **DRF** makes it easy to map URLs **using routers**, which automatically configure endpoints for resources.
@@ -98,85 +98,3 @@ The ```as_view()```  method turns the ```TokenObtainPairView``` class into a vie
 **refresh/**: This is the URL path used to refresh the access token.
 
 ```The as_view()``` method turns the TokenRefreshView class into a view function that can be processed by Django to handle HTTP requests.
-
-name='token_refresh' is the name of the URL in the code.
-
-
-## Views Endpoints
-
-# 1. List Professors with ApiView
-
-````python 
-path('professores', listar_professores),
-````
-
-This is a endpoint of  @api_view listar_professores to List and Create teacher in API. 
-
-**GET**: Lista all professors 
-
-**POST**: Create a new professor in database
-
-To acess ENDPOINT, use:
-```bash 
-POST: http://127.0.0.1:8000/api/professores
-GET: http://127.0.0.1:8000/api/professores
-```
-
-# 2. List Professors with SetView
-
-````python
-path('prof', ProfessoresView.as_view()),
-````
-This is a endpoint of  ProfessoresView to List and Create teacher in API. 
-
-**GET**: Lista all professors 
-
-**POST**: Create a new professor in database
-
-To acess ENDPOINT, use:
-```bash 
-POST: http://127.0.0.1:8000/api/prof
-GET: http://127.0.0.1:8000/api/prof
-```
-
-# 3. List, Update and Delete Professors with SetView
-
-```python
-path('id/<int:pk>', ProfessoresDetailView.as_view()),
-```
-
-This is a endpoint of ProfessoresDetailView to List, Put and Delete teacher in API.
-
-**GET**: Retrieves a professor's details.
-**POST**: Updates a professor's details.
-**DELETE**: Deletes a professor.
-
-To acess ENDPOINT, use:
-
-```bash
-PUT: http://127.0.0.1:8000/api/id/{pk}
-DELETE: http://127.0.0.1:8000/api/id/{pk}
-GET: http://127.0.0.1:8000/api/id/{pk}
-```
-
-# 4. Search teacher by name 
-
-```python
-path('buscar/nome/', buscar_nome_professor),
-```
-This is a edpoint of ProfessoresSearchView with query parameters for search name. 
-
-**GET**: Searches professors by their name using the query parameter search.
-
-````bash
-GET: http://127.0.0.1:8000/api/buscar/nome/
-````
-
-
-
-
-
-Feel free to play around and edit this post as much as you like.
-```
-
-A new blog post is now available at [http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).
