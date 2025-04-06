@@ -41,7 +41,7 @@ so, use:
 
 to start server, use: 
 
-````yarn dev or npm run dev```
+````yarn dev or npm run dev````
 
 If don´t have a NPM or YARN, use: 
 
