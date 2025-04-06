@@ -47,4 +47,4 @@ If don´t have a NPM or YARN, use:
 
 ```yarn install```
 
-````npm install```
+```npm install```
