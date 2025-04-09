@@ -63,7 +63,7 @@ It is a good practice to save your dependencies in a separate file to ensure tha
 ## Creating a `Django Project`
 
   1. **Creating the Back's folder**  
-  First of all, You should create a folder called back, where will stay the `Backend's Project` and entere there.
+  First of all, You should create a folder called back, where will stay the `Backend's Project` and entery there.
 
    ```bash
    mkdir back
@@ -77,14 +77,23 @@ It is a good practice to save your dependencies in a separate file to ensure tha
   django-admin startproject cadastro
   ```
 
-## Start your server
+## Creating a `Django App`
+
+  1. **Creating the app**  
+  Now create an app is required to the applications, you can to that with this commmand:
+
+   ```bash
+   django-admin startapp api
+
+   ```
+
+
+## Adding the dependencies in the `settings of project`
 
 Run the development server:
 
-```bash
-cd my-website
-npm run start
-```
+![Logo do projeto](../static/img/dependencies_img.png)
+
 
 The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
 
