@@ -466,11 +466,14 @@ Let's explore the specific endpoints that our backend provides to interact with 
 This endpoint allows the creation of a new professor using a POST request. It is implemented with @Api_View, which enables detailed control over the request handling.
 
 **Endpoint**
-**Method**: POST: ```http://127.0.0.1:8000/api/professores```
+**Method**:```http://127.0.0.1:8000/api/professores```
+
 **Authorization 🔒**
+
 **```Requires Bearer Token for authentication.```**
-**Request Example**
-**POST**
+
+**Request Example** ```POST```
+
 ````json
     {
         "ni": "67890",
@@ -492,4 +495,4 @@ This endpoint allows the creation of a new professor using a POST request. It is
         "cel": "555-9876",
         "ocup": 30
     }
-```
+``````
