@@ -4,644 +4,492 @@ sidebar_position: 4
 
 # Endpoints
 
-An endpoint is a URL (address) that allows a client (such as a browser or application) to communicate with a server. 
+Think of **endpoints** as specific web addresses (URLs) that act like digital doorways. When a client (like a web browser or a mobile app) wants to communicate with our server, it sends requests to these doorways to perform actions like:
 
-In the application, the **endpoints** are paths responsible for accessing, updating, registering, and deleting teachers, data, and users.
+* **Accessing** information 🧐
+* **Updating** existing data ✍️
+* **Registering** new entries 📝
+* **Deleting** records 🗑️
 
-## BACKEND ENDPOINTS
-
-## Acess all professors. 
-
-**GET**
-```curl
-http://127.0.0.1:8000/api/prof
-````
-
-An endpoint to acess all professors. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
+In our application, these carefully crafted endpoints are the key to managing all our valuable data: from the dedicated teachers who shape minds, to the essential course details, and the very users who interact with our system.
 
 
-````json
-[
-    {
-        "id": 1,
-        "ni": "1021328",
-        "nome": "Lindomar José",
-        "email": "lin@lin.com",
-        "cel": "23132132123",
-        "ocup": 50
-    },
-    {
-        "id": 5,
-        "ni": "5857",
-        "nome": "Miguel da Silva",
-        "email": "skldsk@sakdls.com",
-        "cel": "13212",
-        "ocup": 1
-    },
-    {
-        ....
-    }
-]
-````
+## 🌐 Backend Endpoints ✨
+
+Let's explore the specific endpoints that our backend provides to interact with different parts of our application. Remember, **Authorization** via a **Bearer Token** is required to access these secure pathways! 🔒
+
+## Professor Endpoints. 
+
+**Acess all professors.** 
+
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/prof```
+    * **Purpose:** This endpoint allows you to retrieve a comprehensive list of all the professors currently registered in our system.
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+        [
+          {
+            "id": 1,
+            "ni": "1021328",
+            "nome": "Lindomar José",
+            "email": "lin@lin.com",
+            "cel": "23132132123",
+            "ocup": 50
+          },
+          {
+            "id": 5,
+            "ni": "5857",
+            "nome": "Miguel da Silva",
+            "email": "skldsk@sakdls.com",
+            "cel": "13212",
+            "ocup": 1
+          },
+          {
+            "....": "..."
+          }
+        ]
+        ```
+
+**Acess professor by ```id```.** 
+
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/id/1```
+    * **Purpose:** This endpoint allows you to retrieve a comprehensive list of professor filtered by id. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+    ```json
+        {
+            "id": 1,
+            "ni": "1021328",
+            "nome": "Lindomar José",
+            "email": "lin@lin.com",
+            "cel": "23132132123",
+            "ocup": 50
+        }
+    ```
+
+**Update professor by.** 
+
+ * **HTTP Method:** `PUT`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/id/1```
+    * **Purpose:** An endpoint to acess and update professor.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+        {
+            "id": 1,
+            "ni": "1021328",
+            "nome": "Lindomar Batistão",
+            "email": "lin@linaa.com",
+            "cel": "23132132123",
+            "ocup": 50
+        }
+    ````
+    * **Example Response (HTTP Status: `200 OK`):**
+    ```json
+        {
+            "id": 1,
+            "ni": "1021328",
+            "nome": "Lindomar José",
+            "email": "lin@lin.com",
+            "cel": "23132132123",
+            "ocup": 50
+        }
+    ```
+
+**Create professor.** 
+
+ * **HTTP Method:** `POST`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/prof```
+    * **Purpose:** An endpoint to acess and create professor. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+        {
+            "ni": "12345",
+            "nome": "John Doe",
+            "email": "johndoe@example.com",
+            "cel": "555-1234",
+            "ocup": 45.5
+        }
+    ````
+    * **Example Response (HTTP Status: `201 CREATED`):**
+    ```json
+        {
+            "id": 17,
+            "ni": "12345",
+            "nome": "John Doe",
+            "email": "johndoe@example.com",
+            "cel": "555-1234",
+            "ocup": 45.5
+        }
+    ```
 
 
-## Acess professor by ID. 
-**GET**
-```curl
-http://127.0.0.1:8000/api/id/1
-````
 
-An endpoint to acess specific professors. 
+## Cursos Endpoint. 
 
-**Authorization** by Bearer Token 
+**Acess all courses.** 
 
-**Example for response:** 
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/cursos```
+    * **Purpose:** This endpoint allows you to retrieve a comprehensive list of all the cursos currently registered in our system.
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+        [
+        {
+            "id": 1,
+            "cod": "TEC",
+            "curso": "Técnico em Desenvolvimento de Sistemas",
+            "tipo": "CT",
+            "ha": "45"
+        }
+        ]
+        ```
 
-**Status**: ```200 OK```
+**Acess course by ```id```.** 
 
-````json
-    {
-    "id": 1,
-    "ni": "1021328",
-    "nome": "Lindomar José",
-    "email": "lin@lin.com",
-    "cel": "23132132123",
-    "ocup": 50
-}
-````
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/curso/1```
+    * **Purpose:** This endpoint allows you to retrieve a comprehensive list of all the cursos currently registered in our system.
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+        {
+            "id": 1,
+            "cod": "TEC",
+            "curso": "Técnico em Desenvolvimento de Sistemas",
+            "tipo": "CT",
+            "ha": "45"
+        }
+        ```
 
+**Update course (Fzer dps).** 
 
+ * **HTTP Method:** `PUT`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/id/1```
+    * **Purpose:** An endpoint to acess and update professor.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+        {
+            "id": 1,
+            "ni": "1021328",
+            "nome": "Lindomar Batistão",
+            "email": "lin@linaa.com",
+            "cel": "23132132123",
+            "ocup": 50
+        }
+    ````
+    * **Example Response (HTTP Status: `200 OK`):**
+    ```json
+        {
+            "id": 1,
+            "ni": "1021328",
+            "nome": "Lindomar José",
+            "email": "lin@lin.com",
+            "cel": "23132132123",
+            "ocup": 50
+        }
+    ```
 
+**Create course.** 
 
-## Update professor. 
+ * **HTTP Method:** `POST`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/cursos```
+    * **Purpose:** An endpoint to create course. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+       {
+            "ni": "12345",
+            "nome": "John Doe",
+            "email": "johndoe@example.com",
+            "cel": "555-1234",
+            "ocup": 45.5
+        }
+    ````
+    * **Example Response (HTTP Status: `201 CREATED`):**
+    ```json
+       {
+            "id": 1,
+            "cod": "TEC",
+            "curso": "Técnico em Desenvolvimento de Sistemas",
+            "tipo": "CT",
+            "ha": "45"
+        }
+    ```
 
-```curl
-http://127.0.0.1:8000/api/id/1
-````
+**Fazer delete dps**
 
-An endpoint to acess and update professor. 
+## Endpoint for disciplinas 
 
-**Authorization** by Bearer Token 
+**Acess all Disciplinas.** 
 
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/disciplinas```
+    * **Purpose:** An endpoint to acess all Disciplinas. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+        [
+        {
+            "id": 1,
+            "cod": "PJT",
+            "disc": "Projetos",
+            "ch": 45
+        }
+        ]
+        ```
+**Acess disciplina by ```id```.** 
 
-**Example for a ```PUT``` request:**  
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/disciplina/1```
+    * **Purpose:** TAn endpoint to acess Disciplinas. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+        {
+            "id": 1,
+            "cod": "PJT",
+            "disc": "Projetos",
+            "ch": 45
+        }
+        ```
 
-**PUT**
+**Update disciplina.** 
 
-````json
-{
-    "id": 1,
-    "ni": "1021328",
-    "nome": "Lindomar Batistão",
-    "email": "lin@linaa.com",
-    "cel": "23132132123",
-    "ocup": 50
-}
-````
+ * **HTTP Method:** `PUT`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/disciplina/1```
+    * **Purpose:** An endpoint to acess and update disciplina.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+        {
+            "cod":"PJT_1",
+            "disc":"Projetos Lindomar",
+            "ch":"45"
+        }
+    ````
+    * **Example Response (HTTP Status: `200 OK`):**
+    ```json
+       {
+            "id": 1,
+            "cod": "PJT_1",
+            "disc": "Projetos Lindomar",
+            "ch": 45
+        }
+    ```
+**Create course.** 
 
-**Example for response:** 
+ * **HTTP Method:** `POST`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/disciplinas```
+    * **Purpose:** An endpoint to create ```Disciplina```.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+       {
+            "cod":"PJT",
+            "disc":"Projetos",
+            "ch":"45"
+        }
+    ````
+    * **Example Response (HTTP Status: `201 CREATED`):**
+    ```json
+       {
+            "id": 1,
+            "cod": "PJT",
+            "disc": "Projetos",
+            "ch": 45
+        }
+    ```
 
-**Status**: ```200 OK```
+## Endpoint for class
 
-````json
-{
-    "id": 1,
-    "ni": "1021328",
-    "nome": "Lindomar Batistão",
-    "email": "lin@linaa.com",
-    "cel": "23132132123",
-    "ocup": 50
-}
-````
+**Acess all Disciplinas.** 
 
-## Create a professor. 
-```curl
-http://127.0.0.1:8000/api/prof
-````
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/turmas```
+    * **Purpose:** An endpoint to acess turmas. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+        [
+            {
+                "id": 1,
+                "cod": "DS16",
+                "turrma": "2DS_MB_16"
+            }
+        ]
+        ```
+**Acess turma by ```id```.** 
 
-An endpoint to acess and create professor. 
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/turma/1```
+    * **Purpose:** An endpoint to acess specific turma using ID.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+        {
+            "id": 1,
+            "cod": "DS16",
+            "turrma": "2DS_MB_16"
+        }
+        ```
+**Update turma.** 
 
-**Authorization** by Bearer Token 
+ * **HTTP Method:** `PUT`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/turma/1```
+    * **Purpose:** An endpoint to acess and update turma.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+        {
+            "cod":"DS16",
+            "turrma":"2DS_MB_16&15"
+        }
+    ````
+    * **Example Response (HTTP Status: `200 OK`):**
+    ```json
+        {
+            "id": 1,
+            "cod": "DS16",
+            "turrma": "2DS_MB_16&15"
+        }
+    ```
+## Endpoint for ambientes 
 
-**Example for a ```POST``` request:**  
+**Acess all ambientes.** 
 
-**POST**
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/ambientes```
+    * **Purpose:** An endpoint to acess ambientes. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+      ````json
+            [
+                {
+                    "id": 1,
+                    "cod": "LabA101",
+                    "sala": "Laboratorio 12",
+                    "cap": 25,
+                    "resp": "Lindomar",
+                    "per": "T"
+                }
+            ]
+        ```
 
-````json
-{
-  "ni": "12345",
-  "nome": "John Doe",
-  "email": "johndoe@example.com",
-  "cel": "555-1234",
-  "ocup": 45.5
-}
-````
+**Acess ambientes by ``id``.** 
 
-**Example for response:** 
+ * **HTTP Method:** `GET`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/ambiente/1```
+    * **Purpose:** An endpoint to acess ambientes by id. 
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example Response (HTTP Status: `200 OK`):**
+        ```json
+      ````json
+                {
+                    "id": 1,
+                    "cod": "LabA101",
+                    "sala": "Laboratorio 12",
+                    "cap": 25,
+                    "resp": "Lindomar",
+                    "per": "T"
+                }
+        ```
+**Update ambientes.** 
+ * **HTTP Method:** `PUT`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/ambiente/1```
+    * **Purpose:** An endpoint to acess and update ambiente.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+        {
+            "cod":"LabA106",
+            "sala":"Laboratorio 16", 
+            "cap":"25", 
+            "resp":"Lindomar", 
+            "per":"M"
+        }
+    ````
+    * **Example Response (HTTP Status: `200 OK`):**
+    ```json
+        {
+           "id": 1,
+            "cod": "LabA106",
+            "sala": "Laboratorio 16",
+            "cap": 25,
+            "resp": "Lindomar",
+            "per": "M"
+        }
+    ```
+**Create ambiente.** 
 
-**Status**: ```201 CREATED```
-
-````json
-{
-    "id": 17,
-    "ni": "12345",
-    "nome": "John Doe",
-    "email": "johndoe@example.com",
-    "cel": "555-1234",
-    "ocup": 45.5
-}
-````
+ * **HTTP Method:** `POST`
+    * **Endpoint URL:** ```http://127.0.0.1:8000/api/ambientes```
+    * **Purpose:** An endpoint to create ```Ambientes```.  
+    * **Authorization:** Requires a valid Bearer Token in the request headers.
+    * **Example for a request:**
+    ````json
+        {
+            "cod":"LabA101",
+            "sala":"Laboratorio 12", 
+            "cap":"25", 
+            "resp":"Lindomar", 
+            "per":"T"
+        }
+    ````
+    * **Example Response (HTTP Status: `201 CREATED`):**
+    ```json
+        {
+            "id": 1,
+            "cod": "LabA101",
+            "sala": "Laboratorio 12",
+            "cap": 25,
+            "resp": "Lindomar",
+            "per": "T"
+        }
+    ```
+## O que faltou fazer:
 
 //fazer query parameters aqui no search
-
-
-# Acess all Cursos. 
-
-```curl
-http://127.0.0.1:8000/api/cursos
-````
-
-An endpoint to acess curso. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-[
-    {
-        "id": 1,
-        "cod": "TEC",
-        "curso": "Técnico em Desenvolvimento de Sistemas",
-        "tipo": "CT",
-        "ha": "45"
-    }
-]
-````
-
-## Acess Course by ID. 
-
-
-```curl
-http://127.0.0.1:8000/api/curso/1
-````
-
-An endpoint to acess specific course. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-{
-    "id": 1,
-    "cod": "TEC",
-    "curso": "Técnico em Desenvolvimento de Sistemas",
-    "tipo": "CT",
-    "ha": "45"
-}
-````
-
-## Create Course
-
-
-```curl
-http://127.0.0.1:8000/api/cursos
-````
-
-An endpoint to create course. 
-
-**Authorization** by Bearer Token 
-
-**Example for a ```POST``` request:**  
-
-**POST**
-
-````json
-{
-  "ni": "12345",
-  "nome": "John Doe",
-  "email": "johndoe@example.com",
-  "cel": "555-1234",
-  "ocup": 45.5
-}
-````
-
-**Example for response:** 
-
-**Status**: ```201 CREATED```
-
-````json
-{
-    "id": 1,
-    "cod": "TEC",
-    "curso": "Técnico em Desenvolvimento de Sistemas",
-    "tipo": "CT",
-    "ha": "45"
-}
-````
-
-# Update Course. 
-
-## Here 
-
-
-## Create Disciplina. 
-
-```curl
-http://127.0.0.1:8000/api/disciplinas
-````
-
-An endpoint to create ```Disciplina```. 
-
-**Authorization** by Bearer Token 
-
-**Example for a ```POST``` request:**  
-
-**POST**
-
-````json
-{
-    "cod":"PJT",
-    "disc":"Projetos",
-    "ch":"45"
-
-}
-````
-
-**Example for response:** 
-
-**Status**: ```201 CREATED```
-
-````json
-{
-    "id": 1,
-    "cod": "PJT",
-    "disc": "Projetos",
-    "ch": 45
-}
-````
-
-
-## Acess all Disciplina. 
-
-```curl
-http://127.0.0.1:8000/api/disciplinas
-````
-An endpoint to acess Disciplinas. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-[
-    {
-        "id": 1,
-        "cod": "PJT",
-        "disc": "Projetos",
-        "ch": 45
-    }
-]
-````
-
-## Acess disciplina by ID. 
-
-```curl
-http://127.0.0.1:8000/api/disciplina/1
-````
-
-An endpoint to acess specific disciplina. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-{
-    "id": 1,
-    "cod": "PJT",
-    "disc": "Projetos",
-    "ch": 45
-}
-````
-
-## Update disciplina 
-
-```curl
-http://127.0.0.1:8000/api/disciplina/1
-````
-
-An endpoint to acess and update disciplina. 
-
-**Authorization** by Bearer Token 
-
-
-**Example for a ```PUT``` request:**  
-
-**PUT**
-
-````json
-{
-    "cod":"PJT_1",
-    "disc":"Projetos Lindomar",
-    "ch":"45"
-}
-````
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-````json
-{
-    "id": 1,
-    "cod": "PJT_1",
-    "disc": "Projetos Lindomar",
-    "ch": 45
-}
-````
-
-## Acess all class. 
-
-
-```curl
-http://127.0.0.1:8000/api/turmas
-````
-An endpoint to acess turmas. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-[
-    {
-        "id": 1,
-        "cod": "DS16",
-        "turrma": "2DS_MB_16"
-    }
-]
-````
-
-## Acess Turmas by ID. 
-
-```curl
-http://127.0.0.1:8000/api/disciplina/1
-````
-
-An endpoint to acess specific turma using ID. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-{
-    "id": 1,
-    "cod": "DS16",
-    "turrma": "2DS_MB_16"
-}
-````
- ## Update Turmas. 
-
-```curl
-http://127.0.0.1:8000/api/turma/1
-````
-
-An endpoint to acess and update turma. 
-
-**Authorization** by Bearer Token 
-
-
-**Example for a ```PUT``` request:**  
-
-**PUT**
-
-````json
-{
-    "cod":"DS16",
-    "turrma":"2DS_MB_16&15"
-}
-````
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-````json
-{
-    "id": 1,
-    "cod": "DS16",
-    "turrma": "2DS_MB_16&15"
-}
-````
-
-## Acess all ambientes. 
-
-
-```curl
-http://127.0.0.1:8000/api/ambientes
-````
-An endpoint to acess ambientes. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-[
-    {
-        "id": 1,
-        "cod": "LabA101",
-        "sala": "Laboratorio 12",
-        "cap": 25,
-        "resp": "Lindomar",
-        "per": "T"
-    }
-]
-````
-
-## Acess ambientes by ID. 
-
-```curl
-http://127.0.0.1:8000/api/ambiente/1
-````
-An endpoint to acess ambientes. 
-
-**Authorization** by Bearer Token 
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-**GET**
-
-````json
-{
-    "id": 1,
-    "cod": "LabA101",
-    "sala": "Laboratorio 12",
-    "cap": 25,
-    "resp": "Lindomar",
-    "per": "T"
-}
-````
-
-## Update ambientes 
-
-```curl
-http://127.0.0.1:8000/api/ambiente/1
-````
-
-An endpoint to acess and update ambiente. 
-
-**Authorization** by Bearer Token 
-
-
-**Example for a ```PUT``` request:**  
-
-**PUT**
-
-````json
-{
-
-    "cod":"LabA106",
-    "sala":"Laboratorio 16", 
-    "cap":"25", 
-    "resp":"Lindomar", 
-    "per":"M"
-}
-````
-
-**Example for response:** 
-
-**Status**: ```200 OK```
-
-````json
-{
-    "id": 1,
-    "cod": "LabA106",
-    "sala": "Laboratorio 16",
-    "cap": 25,
-    "resp": "Lindomar",
-    "per": "M"
-}
-````
-
-## Create Ambiente 
-
-```curl
-http://127.0.0.1:8000/api/ambientes
-````
-
-An endpoint to create ```Ambientes```. 
-
-**Authorization** by Bearer Token 
-
-**Example for a ```POST``` request:**  
-
-**POST**
-
-````json
-{
-
-    "cod":"LabA101",
-    "sala":"Laboratorio 12", 
-    "cap":"25", 
-    "resp":"Lindomar", 
-    "per":"T"
-}
-````
-
-**Example for response:** 
-
-**Status**: ```201 CREATED```
-
-````json
-{
-    "id": 1,
-    "cod": "LabA101",
-    "sala": "Laboratorio 12",
-    "cap": 25,
-    "resp": "Lindomar",
-    "per": "T"
-}
-````
-
+// Criar o create e delete de turmas 
+// Fazer o delete de todos 
 
 >> Now, this is example for Create professor using @Api_View. For more explanation, acess ```View```.
 
-## Create Professor 
+## Create New Professor
 
-```curl
-http://127.0.0.1:8000/api/professores
-````
+This endpoint allows the creation of a new professor using a POST request. It is implemented with @Api_View, which enables detailed control over the request handling.
 
-An endpoint to create ```Professor```. 
-
-**Authorization** by Bearer Token 
-
-**Example for a ```POST``` request:**  
-
+**Endpoint**
+**Method**: POST: ```http://127.0.0.1:8000/api/professores```
+**Authorization 🔒**
+**```Requires Bearer Token for authentication.```**
+**Request Example**
 **POST**
-
 ````json
-{
-  "ni": "67890",
-  "nome": "Alice Johnson",
-  "email": "alice.johnson@example.com",
-  "cel": "555-9876",
-  "ocup": 30.0
-}
-
+    {
+        "ni": "67890",
+        "nome": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "cel": "555-9876",
+        "ocup": 30.0
+    }
 ````
-
-**Example for response:** 
-
+**Response Example**
 **Status**: ```201 CREATED```
 
 ````json
-{
-    "id": 18,
-    "ni": "67890",
-    "nome": "Alice Johnson",
-    "email": "alice.johnson@example.com",
-    "cel": "555-9876",
-    "ocup": 30
-}
-````
+    {
+        "id": 18,
+        "ni": "67890",
+        "nome": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "cel": "555-9876",
+        "ocup": 30
+    }
+```
