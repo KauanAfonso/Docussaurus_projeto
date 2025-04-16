@@ -29,9 +29,13 @@ def listar_professores(request):
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def buscar_nome_professor(request):
-    termo = request.get('nome', '')
+    if request.method == 'GET':
+        termo = request.query_params.get('nome', '')
+    else:
+        termo = request.data.get('nome', '')
+
     if termo:
-        professores = Cadastro.objects.filter(nome_incontains = termo)
+        professores = Cadastro.objects.filter(nome__icontains=termo)
     else:
         professores = Cadastro.objects.all()
     

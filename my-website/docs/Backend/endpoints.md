@@ -13,8 +13,12 @@ Think of **endpoints** as specific web addresses (URLs) that act like digital do
 
 In our application, these carefully crafted endpoints are the key to managing all our valuable data: from the dedicated teachers who shape minds, to the essential course details, and the very users who interact with our system.
 
+# All Delete:
 
-## 🌐 Backend Endpoints ✨
+All deletes is the same thing, use the same URL as Update and change the method to delete
+and the response is ```204 NO CONTENT```, because in Views, after you send a delete, data doens´t return nothing. 
+
+## Backend Endpoints
 
 Let's explore the specific endpoints that our backend provides to interact with different parts of our application. Remember, **Authorization** via a **Bearer Token** is required to access these secure pathways! 🔒
 
@@ -125,7 +129,36 @@ Let's explore the specific endpoints that our backend provides to interact with 
             "ocup": 45.5
         }
     ```
+**Search professor by id**
 
+Url ```http://127.0.0.1:8000/api/search/?search=kelvin```
+
+**Get**
+
+
+
+Response: ```200 OK```
+
+````json
+[
+  {
+    "id": 7,
+    "ni": "1000",
+    "nome": "Kelvin",
+    "email": "ke@gmail.com",
+    "cel": "19 9256565",
+    "ocup": 1.0
+  },
+  {
+    "id": 8,
+    "ni": "1000",
+    "nome": "Kelvin",
+    "email": "ke@gmail.com",
+    "cel": "19 9256565",
+    "ocup": 1.0
+  }
+]
+````
 
 
 ## Cursos Endpoint. 
@@ -203,12 +236,11 @@ Let's explore the specific endpoints that our backend provides to interact with 
     * **Authorization:** Requires a valid Bearer Token in the request headers.
     * **Example for a request:**
     ````json
-       {
-            "ni": "12345",
-            "nome": "John Doe",
-            "email": "johndoe@example.com",
-            "cel": "555-1234",
-            "ocup": 45.5
+         {
+            "cod": "TEC",
+            "curso": "Técnico em Desenvolvimento de Sistemas",
+            "tipo": "CT",
+            "ha": "45"
         }
     ````
     * **Example Response (HTTP Status: `201 CREATED`):**
@@ -453,11 +485,6 @@ Let's explore the specific endpoints that our backend provides to interact with 
             "per": "T"
         }
     ```
-## O que faltou fazer:
-
-//fazer query parameters aqui no search
-// Criar o create e delete de turmas 
-// Fazer o delete de todos 
 
 >> Now, this is example for Create professor using @Api_View. For more explanation, acess ```View```.
 
