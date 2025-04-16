@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Serializers
 
-### What is the serializers?
+### What are the serializers?
 
 Serializers are responsible for converting complex data types—such as querysets and model instances—into native Python data types that can then be easily rendered into JSON, XML, or other content types. They also handle the reverse process, converting incoming JSON (or other formats) back into usable Python objects.
 
