@@ -71,3 +71,34 @@ class Ambiente(models.Model):
     per = models.CharField(choices=PERIODOS, max_length=10, default="M") #periodo
 
 ```
+
+## Turma Model
+
+The `Turma model` is responsible for storing all the information related to the class. This includes important details such as the class's code and the group name.
+
+```jsx title="back/api/models.py"
+class Turma(models.Model):
+    cod = models.CharField(max_length=255)      #Código             #13
+    turma = models.CharField(max_length=255)    #Turma              #2DS-TB
+
+```
+
+## Curso Model
+
+The `Curso model` is designed to store all the essential information related to a course. It includes important attributes such as the course code, name, type, and the total number of class hours. These fields help in managing the different courses offered in the system, each identified by a unique code and a well-defined structure.
+
+```jsx title="back/api/models.py"
+class Curso(models.Model):
+
+    TIPOS = [
+    ('CAI', 'Aprendizagem'),
+    ('CT','Técnico'),
+    ('CS','Superior'),
+    ('FIC','Formação')
+    ]
+
+    cod = models.CharField(max_length=255)      #Código             #TEC
+    curso = models.CharField(max_length=255)    #Curso              #Técnico em Desenvolvimento de Sistemas
+    tipo = models.CharField(max_length=20, choices=TIPOS, default="CT")
+    ha =  models.CharField(max_length=255)      #Hora Aula          #45
+
