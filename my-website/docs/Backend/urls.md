@@ -65,7 +65,7 @@ from rest_framework_simplejwt.views import (
 This code imports two views from the rest_framework_simplejwt library, popular library for working with JSON Web Tokens (JWT) in Django, especially in conjunction with the **Django Rest Framework (DRF)**. To understand what JWT is, [click here](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/).
 
 
-**TokenObtainPairView**: This view is responsible for generating a pair of tokens (an access token and a refresh token) when the user submits their credentials (usually username and password).
+**TokenObtainPairView**: This view is responsible for generating a pair of tokens when the user submits their credentials (usually username and password).
 
 **TokenRefreshView**: This view is responsible for renewing the access token using the refresh token provided by the user.
 
