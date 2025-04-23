@@ -11,6 +11,12 @@ Models in Django are used to define the structure of your database. They allow y
 To larning more about `models` clicking [here](https://docs.djangoproject.com/en/5.2/topics/db/models/)
 
 
+
+# Project Database
+![MER do banco de dados](/img/banco_de_dados.png)
+This is the logical data model (Entity-Relationship Diagram) of the project's database. It illustrates the structure of the database, including the main entities and their attributes. This database has no has relationship with its tables.
+
+
 ## Importing the Models
 
 At `api/models.py` If does not came with the library call , insert this to be allowed working with models:
@@ -102,3 +108,4 @@ class Curso(models.Model):
     tipo = models.CharField(max_length=20, choices=TIPOS, default="CT")
     ha =  models.CharField(max_length=255)      #Hora Aula          #45
 
+```
