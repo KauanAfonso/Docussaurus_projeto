@@ -3,7 +3,9 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import { Itens } from '../components/HomepageFeatures/Itens';
+import { Faq } from '../components/HomepageFeatures/Faq';
+import { FeatureCards } from '../components/HomepageFeatures/FeatureCards';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
@@ -37,6 +39,18 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <Itens>
+          
+        </Itens>
+
+        <FeatureCards>
+          
+        </FeatureCards>
+        <Faq>
+
+        </Faq>
+
+     {/* Por itens da homepage aqui */}
       </main>
     </Layout>
   );

@@ -1,0 +1,65 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Feature Cards */
+  .features {
+    padding: 40px 20px;
+    margin-top: 30px;
+  }
+  
+  .features .container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    justify-content: center;
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #e5e7eb;
+  }
+  
+  .features .container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .features .container::-webkit-scrollbar-track {
+    background: #e5e7eb;
+  }
+  
+  .features .container::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    /* border-radius: 8px; */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    flex: 0 0 250px; /* Largura fixa para cada cartão */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #4b5563;
+  }
