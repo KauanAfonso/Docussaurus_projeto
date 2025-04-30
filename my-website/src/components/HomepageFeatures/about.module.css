@@ -1,0 +1,73 @@
+.div_container h1 {
+    text-align: center;
+    color: var(--ifm-heading-color);
+}
+
+.div_main {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--ifm-background-surface-color);
+    color: var(--ifm-font-color-base);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.div_content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ifm-heading-color);
+}
+
+.div_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.div_content p {
+    font-size: 1rem;
+    color: var(--ifm-font-color-base);
+    margin-bottom: 1rem;
+    text-align: center;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.links a img {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: transform 0.2s ease;
+}
+
+.links a img:hover {
+    transform: scale(1.1);
+}
+
+
