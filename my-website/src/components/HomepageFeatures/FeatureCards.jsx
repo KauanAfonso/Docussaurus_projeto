@@ -7,18 +7,18 @@ export function FeatureCards() {
       <div className={styles.container}>
         <div className={styles.card}>
           <span className={styles.icon}>🚀</span>
-          <h3>Início Rápido</h3>
-          <p>Configure a API em minutos com nosso guia passo a passo.</p>
+          <h3>Quickly Init</h3>
+          <p>Quicly and fast configuration.</p>
         </div>
         <div className={styles.card}>
           <span className={styles.icon}>📚</span>
-          <h3>Referência Completa</h3>
-          <p>Explore todos os endpoints e parâmetros disponíveis.</p>
+          <h3>Total Reference</h3>
+          <p>Explore all refences and powerfuls.</p>
         </div>
         <div className={styles.card}>
           <span className={styles.icon}>💻</span>
-          <h3>Exemplos Práticos</h3>
-          <p>Veja exemplos de código em várias linguagens.</p>
+          <h3>Real Examples</h3>
+          <p>Real examples to a operation of API.</p>
         </div>
       </div>
     </section>
