@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Documentation',
+  title: 'Documentation eDUCAR',
   tagline: 'Of projects developed in Lindomar Class',
   favicon: 'img/favicon.ico',
 
